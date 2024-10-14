@@ -3,7 +3,6 @@ import SectionDivider from "./component/sectionDivider";
 import About from "./component/about";
 import Projects from "./component/projects";
 import Skills from "./component/skills";
-// import Experience from "./component/experience";
 import Contact from "./component/contact";
 
 export default function Home() {
