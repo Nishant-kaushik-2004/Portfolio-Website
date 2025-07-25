@@ -10,6 +10,20 @@ html.dark{
   --line-color:rgba(255,255,255,0.2)
 }
 
-.borderBlack{
-  @apply border border-black/10
+/* Ensure proper background colors */
+body.light {
+  background-color: #f8fafc !important; /* Light blue-gray */
+}
+
+body.dark {
+  background-color: #0f172a !important; /* Dark blue */
+}
+
+/* Make cards opaque enough to hide particles */
+.project-card {
+  background-color: rgba(241, 245, 249, 0.95); /* Light mode card */
+}
+
+.dark .project-card {
+  background-color: rgba(15, 23, 42, 0.95); /* Dark mode card */
 }

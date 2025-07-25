@@ -85,7 +85,7 @@ function Intro() {
         </Link>
         <a
           className="group bg-white px-4 py-2  flex items-center gap-2 rounded-full w-max sm:px-7 sm:py-4 hover:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 "
-          href="/Nishant_Kaushik_Resume.pdf"
+          href="/Nishant_Kaushik_FullStack_Resume.pdf"
           download
         >
           Download CV
