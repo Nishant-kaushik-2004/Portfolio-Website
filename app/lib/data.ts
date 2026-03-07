@@ -3,7 +3,10 @@ import CustomAuthentication from "@/public/CustomAuthentication.png";
 import TrueFeedback from "@/public/TrueFeedback.png";
 import SensorWatchImage from "@/public/SensorWatchImage.png";
 import itemManager from "@/public/itemManager.png";
-import { title } from "process";
+import React from "react";
+import { LuGraduationCap } from "react-icons/lu";
+import { CgWorkAlt } from "react-icons/cg";
+import { FaReact } from "react-icons/fa";
 
 export const links = [
   {
@@ -15,16 +18,31 @@ export const links = [
     hash: "#about",
   },
   {
-    name: "Skills",
-    hash: "#skills",
+    name: "Experience",
+    hash: "#experience",
   },
   {
     name: "Projects",
     hash: "#projects",
   },
   {
+    name: "Skills",
+    hash: "#skills",
+  },
+  {
     name: "Contact",
     hash: "#contact",
+  },
+] as const;
+
+export const experiencesData = [
+  {
+    title: "Full-Stack Developer Intern",
+    location: "Fyris",
+    description:
+      "Contributed to a production-grade web application using Next.js, TypeScript, and PostgreSQL. Improved page load performance by ~25% using SSR/CSR strategies, integrated REST APIs, and developed real-world features while collaborating with the engineering team in a live codebase.",
+    icon: React.createElement(FaReact),
+    date: "Sep 2025 - Nov 2025",
   },
 ] as const;
 

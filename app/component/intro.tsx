@@ -18,33 +18,33 @@ function Intro() {
       id="home"
       ref={ref}
     >
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mb-10">
         <div className="relative">
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "tween", duration: 0.2 }}
           >
-            <Image
-              src={
-                "/portfolio profile picture.jpeg"
-              }
-              alt="Resume holder image"
-              width="192"
-              height="192"
-              priority={true}
-              className="h-24 w-24 border-[0.35rem] rounded-full border-white object-cover shadow-xl bg-yellow-700"
-            ></Image>
+            <div className="h-52 w-52 rounded-full border-[0.35rem] border-white shadow-xl flex items-end justify-center overflow-hidden">
+              <Image
+                src="/portfolio profile picture.png"
+                alt="Resume holder image"
+                width={292}
+                height={292}
+                priority
+                className="w-40 h-40"
+              />
+            </div>
           </motion.div>
           <motion.span
-            className="text-4xl absolute bottom-0 right-0"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
+            className="text-5xl absolute bottom-0 left-0"
+            initial={{ opacity: 0, translateX: -40, rotateZ: -40, translateY: 40, scale: 1.2 }}
+            animate={{ opacity: 1, translateX: 0, rotateZ: 10, translateY: 0, scale: 0.8 }}
             transition={{
               type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
+              stiffness: 200,
+              delay: 0.3,
+              duration: 1,
             }}
           >
             👋
@@ -62,8 +62,9 @@ function Intro() {
         <span className="italic">high-performance</span> and{" "}
         <span className="italic">responsive</span> web applications. I
         specialize in <span className="font-bold">MERN</span> stack development
-        and have additional experience with <span className="font-bold">Next.js</span>. I
-        enjoy building <span className="italic">sites</span>.
+        and have additional experience with{" "}
+        <span className="font-bold">Next.js</span>. I enjoy building{" "}
+        <span className="italic">sites</span>.
       </motion.p>
       <motion.div
         className="flex justify-center items-center flex-col sm:flex-row
@@ -85,7 +86,7 @@ function Intro() {
         </Link>
         <a
           className="group bg-white px-4 py-2  flex items-center gap-2 rounded-full w-max sm:px-7 sm:py-4 hover:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 "
-          href="/Nishant_Kaushik_FullStack_Resume.pdf"
+          href="/Nishant_Kaushik_Resume.pdf"
           download
         >
           Download CV

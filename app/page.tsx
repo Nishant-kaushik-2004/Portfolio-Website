@@ -6,6 +6,7 @@ import Skills from "./component/skills";
 import Contact from "./component/contact";
 import Particle3DUniverse from "./component/Particle3DUniverse";
 import "./globals.css";
+import Experience from "./component/experiences";
 
 export default function Home() {
   return (
@@ -14,8 +15,9 @@ export default function Home() {
       <Intro></Intro>
       <SectionDivider></SectionDivider>
       <About></About>
-      <Skills></Skills>
+      <Experience></Experience>
       <Projects></Projects>
+      <Skills></Skills>
       <Contact></Contact>
     </main>
   );

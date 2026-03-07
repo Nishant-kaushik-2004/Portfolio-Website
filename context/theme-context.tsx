@@ -2,13 +2,16 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
+
 type ThemeContextProviderProps = {
   children: React.ReactNode;
 };
+
 type ContextType = {
   theme: string;
   toggleTheme: () => void;
 };
+
 const ThemeContext = createContext<ContextType | null>(null);
 
 export default function ThemeContextProvider({
@@ -17,7 +20,7 @@ export default function ThemeContextProvider({
   const [theme, setTheme] = useState<Theme>("light");
 
   const toggleTheme = () => {
-    console.log(theme);
+    // console.log(theme);
     if (theme === "light") {
       setTheme("dark");
       window.localStorage.setItem("theme", "dark");
@@ -28,6 +31,7 @@ export default function ThemeContextProvider({
       document.documentElement.classList.remove("dark");
     }
   };
+
   useEffect(() => {
     const localTheme = window.localStorage.getItem("theme") as Theme | null;
     if (localTheme) {
@@ -35,6 +39,7 @@ export default function ThemeContextProvider({
       if (localTheme === "dark") {
         document.documentElement.classList.add("dark");
       }
+      // Works based on the theme preference of browser not the device, so if the user has set their browser to system default theme then our website will load in system default theme otherwise in the users browser set theme if any.
     } else if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
       //if there is no theme preference stored in the localStorage theme then we will check if our device has been in dark mode, if so then we will load our website with dark theme.
       setTheme("dark");
@@ -48,6 +53,7 @@ export default function ThemeContextProvider({
     </ThemeContext.Provider>
   );
 }
+// Custom hook to use the ThemeContext
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (context === null) {
