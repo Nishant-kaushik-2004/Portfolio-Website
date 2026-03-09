@@ -14,7 +14,7 @@ function Intro() {
   const { setTimeOfLastClick, setActiveSection } = useActiveSectionContext();
   return (
     <section
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 2xl:max-w-[57rem] scroll-mt-[100rem]"
+      className="mb-28 max-w-[52rem] text-center sm:mb-0 2xl:max-w-[57rem] scroll-mt-[100rem]"
       id="home"
       ref={ref}
     >
@@ -25,7 +25,7 @@ function Intro() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "tween", duration: 0.2 }}
           >
-            <div className="h-52 w-52 rounded-full border-[0.35rem] border-white shadow-xl flex items-end justify-center overflow-hidden">
+            <div className="h-52 w-52 bg-pink-100/60 rounded-full border-[0.35rem] border-white shadow-xl flex items-end justify-center overflow-hidden">
               <Image
                 src="/portfolio profile picture.png"
                 alt="Resume holder image"
@@ -38,8 +38,20 @@ function Intro() {
           </motion.div>
           <motion.span
             className="text-5xl absolute bottom-0 left-0"
-            initial={{ opacity: 0, translateX: -40, rotateZ: -40, translateY: 40, scale: 1.2 }}
-            animate={{ opacity: 1, translateX: 0, rotateZ: 10, translateY: 0, scale: 0.8 }}
+            initial={{
+              opacity: 0,
+              translateX: -40,
+              rotateZ: -40,
+              translateY: 40,
+              scale: 1.2,
+            }}
+            animate={{
+              opacity: 1,
+              translateX: 0,
+              rotateZ: 10,
+              translateY: 0,
+              scale: 0.8,
+            }}
             transition={{
               type: "spring",
               stiffness: 200,
@@ -52,7 +64,7 @@ function Intro() {
         </div>
       </div>
       <motion.p
-        className="text-xl mb-10 mt-4 font-medium !leading-[1.5] sm:text-2xl xl:text-3xl 2xl:text-4xl"
+        className="text-xl mb-10 mt-4 font-medium !leading-[1.5] sm:text-2xl xl:text-2xl 2xl:text-3xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
@@ -63,7 +75,8 @@ function Intro() {
         <span className="italic">responsive</span> web applications. I
         specialize in <span className="font-bold">MERN</span> stack development
         and have additional experience with{" "}
-        <span className="font-bold">Next.js</span>. I enjoy building{" "}
+        <span className="font-bold">Next.js </span> and{" "}
+        <span className="font-bold">PostgreSQL</span>. I enjoy building{" "}
         <span className="italic">sites</span>.
       </motion.p>
       <motion.div
@@ -75,7 +88,7 @@ function Intro() {
       >
         <Link
           href="#contact"
-          className="group bg-gray-900 text-white px-4 py-2  flex items-center gap-2 rounded-full w-max sm:px-7 sm:py-4 outline-none focus:scale-110  hover:scale-105 hover:bg-gray-950 active:scale-100 transition"
+          className="group bg-gray-900 text-white px-4 py-2  flex items-center gap-2 rounded-full w-max sm:px-6 sm:py-3 outline-none focus:scale-110  hover:scale-105 hover:bg-gray-950 active:scale-100 transition"
           onClick={() => {
             setTimeOfLastClick(Date.now);
             setActiveSection("Contact");
@@ -85,7 +98,7 @@ function Intro() {
           <HiArrowNarrowRight className="opacity-70 group-hover:translate-x-1 transition  " />
         </Link>
         <a
-          className="group bg-white px-4 py-2  flex items-center gap-2 rounded-full w-max sm:px-7 sm:py-4 hover:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 "
+          className="group bg-white px-4 py-2  flex items-center gap-2 rounded-full w-max sm:px-6 sm:py-3 hover:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 "
           href="/Nishant_Kaushik_Resume.pdf"
           download
         >

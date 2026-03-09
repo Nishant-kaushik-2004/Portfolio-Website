@@ -3,7 +3,9 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { projectsData } from "../lib/data";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FaGithubSquare } from "react-icons/fa";
+import { useTheme } from "@/context/theme-context";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -11,7 +13,7 @@ export default function Project({
   title,
   description,
   tags,
-  imageUrl,
+  images,
   githubUrl,
   liveLink,
 }: ProjectProps) {
@@ -23,6 +25,8 @@ export default function Project({
   const scaleProgress = useTransform(scrollYProgress, [0, 0.9], [0.8, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
+  const { theme } = useTheme();
+
   return (
     <motion.div
       ref={projectsRef}
@@ -32,9 +36,8 @@ export default function Project({
       }}
       className="mb-3 sm:mb-20 last:mb-0 group relative z-10"
     >
-      <section className="bg-gray-100 rounded-lg max-w-[55rem] border border-black/5 overflow-hidden relative sm:group-even:pl-1 hover:bg-gray-200 transition dark:bg-gray-900/60 dark:hover:bg-black/30 dark:text-white">
-
-        <div className="px-3 pt-4 pb-7 h-full w-full sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[55%] flex flex-col sm:group-odd:mr-[10rem] sm:group-even:ml-[22rem]">
+      <section className="bg-gray-100 rounded-lg max-w-[65rem] border border-black/5 overflow-hidden relative sm:group-even:pl-1 hover:bg-gray-200 transition dark:bg-gray-900/60 dark:hover:bg-black/30 dark:text-white">
+        <div className="px-3 pt-4 pb-7 h-full w-full sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[52%] flex flex-col sm:group-even:ml-[45%]">
           <h3 className="text-2xl font-semibold">{title}</h3>
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
             {description}
@@ -49,7 +52,7 @@ export default function Project({
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-gray-800/90 text-white rounded-lg hover:bg-gray-700/90 transition-colors text-sm font-medium dark:bg-gray-700 dark:hover:bg-gray-600"
               >
-                <Github size={16} />
+                <FaGithubSquare size={16} />
                 <span>Code</span>
               </a>
             )}
@@ -79,10 +82,10 @@ export default function Project({
           </ul>
         </div>
         <Image
-          src={imageUrl}
+          src={theme === "light" ? images.dark : images.light}
           alt="Projects that i worked on"
           quality={95}
-          className="hidden sm:block absolute top-8 -right-24 w-[20.25rem] sm:w-[28.25rem] rounded-t-lg shadow-2xl group-even:-left-28 group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-1 group-hover:scale-[1.04] group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-1 transition"
+          className="hidden sm:block absolute top-8 -right-24 w-[20.25rem] sm:w-[36rem] rounded-t-lg shadow-2xl group-even:-left-28 group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-1 group-hover:scale-[1.04] group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-1 transition"
         />
       </section>
     </motion.div>

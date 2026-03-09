@@ -3,9 +3,9 @@ import CustomAuthentication from "@/public/CustomAuthentication.png";
 import TrueFeedback from "@/public/TrueFeedback.png";
 import SensorWatchImage from "@/public/SensorWatchImage.png";
 import itemManager from "@/public/itemManager.png";
+import DevTinderImageLight from "@/public/devTinderImageLight.png";
+import DevTinderImageDark from "@/public/devTinderImageDark.png";
 import React from "react";
-import { LuGraduationCap } from "react-icons/lu";
-import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 
 export const links = [
@@ -48,6 +48,30 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "DevTinder - Developer Matching Platform",
+    description:
+      "Built a full-stack developer matching platform inspired by Tinder where users can discover developers for networking, send match requests, and chat in real-time. Implemented swipe-based discovery with intelligent pagination and prefetching for smooth UX. Developed secure authentication using JWT cookies and protected routes with role-based authorization. Integrated Socket.io for real-time messaging with sub-150ms latency. Designed scalable REST APIs with Node.js, Express, and MongoDB, handling match requests, chat rooms, and notifications efficiently. Deployed production backend on AWS EC2 with Nginx reverse proxy and HTTPS, while hosting the frontend on Vercel.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Socket.io",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Vite",
+      "Tailwind CSS",
+      "JWT Authentication",
+      "AWS EC2",
+      "Nginx",
+    ],
+    images: {
+      light: DevTinderImageLight,
+      dark: DevTinderImageDark,
+    },
+    githubUrl: "https://github.com/Nishant-kaushik-2004/Dev-Tinder",
+    liveLink: "https://devtinder.vercel.app",
+  },
+  {
     title: "SensorWatch - Real-Time IoT Monitoring",
     description:
       "Engineered a real-time IoT dashboard using Next.js and MongoDB to process 1000+ daily sensor readings from ESP8266 NodeMCU devices. Integrated ThingSpeak for live temperature, humidity, and rain sensor data with instant alerts on threshold breaches, reducing response time by 40%. Enabled user authentication with NextAuth.js and dual OAuth providers, supporting 50+ users. Added historical data export in CSV, JSON, and XML formats with date-range filtering for detailed analysis.",
@@ -61,7 +85,10 @@ export const projectsData = [
       "Framer Motion",
       "CSV/JSON/XML Export",
     ],
-    imageUrl: SensorWatchImage,
+    images: {
+      light: SensorWatchImage,
+      dark: SensorWatchImage,
+    },
     githubUrl:
       "https://github.com/Nishant-kaushik-2004/Home_Automation_Project",
     liveLink: "https://home-automation-project.vercel.app",
@@ -80,7 +107,10 @@ export const projectsData = [
       "Shadcn",
       "ZOD",
     ],
-    imageUrl: TrueFeedback,
+    images: {
+      light: TrueFeedback,
+      dark: TrueFeedback,
+    },
     githubUrl: "https://github.com/Nishant-kaushik-2004/Mystery-Message",
     liveLink: "https://mystery-messaging.vercel.app/",
   },
@@ -99,7 +129,10 @@ export const projectsData = [
       "Responsive Design",
       "vercel",
     ],
-    imageUrl: PortfolioWebsite,
+    images: {
+      light: PortfolioWebsite,
+      dark: PortfolioWebsite,
+    },
     githubUrl: "https://github.com/Nishant-kaushik-2004/Portfolio-Website",
     liveLink: "https://portfolio-website-drab-kappa-27.vercel.app/",
   },
@@ -121,7 +154,10 @@ export const projectsData = [
       "Render",
       "REST API",
     ],
-    imageUrl: itemManager,
+    images: {
+      light: itemManager,
+      dark: itemManager,
+    },
     githubUrl: "https://github.com/Nishant-kaushik-2004/itemManager",
     liveLink: "https://item-manager-frontend.onrender.com/",
   },
@@ -138,31 +174,52 @@ export const projectsData = [
       "Tailwind CSS",
       "Mailtrap",
     ],
-    imageUrl: CustomAuthentication,
+    images: {
+      light: CustomAuthentication,
+      dark: CustomAuthentication,
+    },
     githubUrl: "https://github.com/Nishant-kaushik-2004/Custom-Auth-Project",
     liveLink: "",
   },
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "Tailwind",
-  "Bootstrap",
+  // Core Languages
   "JavaScript",
   "TypeScript",
+  "C",
+  "Python",
+  "Java",
+
+  // Frontend
   "React",
-  "Redux",
   "Next.js",
-  "Auth.js",
+  "Redux",
+  "HTML",
+  "CSS",
+  "Tailwind CSS",
+  "Bootstrap",
   "Framer Motion",
-  "Shadcn",
+  "Shadcn UI",
+
+  // Backend
   "Node.js",
   "Express.js",
+
+  // Databases
   "MongoDB",
-  "Git",
+  "PostgreSQL",
+
+  // Authentication & Security
+  "JWT Authentication",
+  "OAuth",
+  "Auth.js",
+
+  // Cloud / DevOps
+  "AWS EC2",
   "Vercel",
-  "C",
-  "Java",
-  "Data Structure And Algorithms",
+  "Git",
+
+  // CS Fundamentals
+  "Data Structures & Algorithms",
 ] as const;

@@ -8,19 +8,21 @@ import { useSectionInView } from "@/app/lib/hooks";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
-  const isMobile =
-    typeof window !== "undefined" &&
-    window.matchMedia("(max-width: 640px)").matches;
+
+  // This is giving a hydration mismatch error because window.matchMedia is not available during server-side rendering so initially false but then becomes true on the client side, so gives a hydration mismatch. To avoid this, we can just use the mobile animation for all screen sizes since it works well atleast for now but after I add more experiences then I can move vertical line to middle and use desktop animation.
+  // const isMobile =
+  //   typeof window !== "undefined" &&
+  //   window.matchMedia("(max-width: 640px)").matches;
 
   const mobileAnimation = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0 },
   };
 
-  const desktopAnimation = {
-    hidden: { opacity: 0, x: 80 },
-    visible: { opacity: 1, x: 0 },
-  };
+  // const desktopAnimation = {
+  //   hidden: { opacity: 0, x: 80 },
+  //   visible: { opacity: 1, x: 0 },
+  // };
 
   return (
     <section
@@ -38,12 +40,13 @@ export default function Experience() {
           {experiencesData.map((item, index) => (
             <motion.div
               key={index}
-              variants={isMobile ? mobileAnimation : desktopAnimation}
+              // variants={isMobile ? mobileAnimation : desktopAnimation}
+              variants={mobileAnimation}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className={`relative ${isMobile ? "pl-16" : "pl-20"}`}
+              className="relative pl-16 md:pl-20"
             >
               {/* icon circle */}
               <div className="absolute left-6 top-5 flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full bg-white shadow-md ring-4  dark:bg-slate-800 ring-white/10">

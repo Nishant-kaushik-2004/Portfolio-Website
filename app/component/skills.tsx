@@ -26,20 +26,22 @@ export default function Skills() {
       ref={ref}
     >
       <SectionHeading>Skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
+      <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-lg">
         {skillsData.map((skill, idx) => (
           <motion.li
-            className="bg-white border border-black/[0.1] rounded-xl px-4 py-1 sm:px-5 sm:py-3 dark:bg-white/10  dark:text-white/80"
             key={idx}
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
-            viewport={{
-              once: true,
-            }}
+            viewport={{ once: true }}
             custom={idx}
+            className="bg-white border border-black/10 rounded-xl px-4 py-1 sm:px-5 sm:py-2 
+                 shadow-sm hover:shadow-md transition 
+                 dark:bg-white/10 dark:border-white/10"
           >
-            <span>{skill}</span>
+            <span className="font-medium tracking-wide text-gray-800 dark:text-white/80">
+              {skill}
+            </span>
           </motion.li>
         ))}
       </ul>
