@@ -69,7 +69,7 @@ export const projectsData = [
       dark: DevTinderImageDark,
     },
     githubUrl: "https://github.com/Nishant-kaushik-2004/Dev-Tinder",
-    liveLink: "https://devtinder.vercel.app",
+    liveLink: "https://dev-tinder-two-nu.vercel.app/",
   },
   {
     title: "SensorWatch - Real-Time IoT Monitoring",
